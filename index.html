@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] | AI & Data Science Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Styling */
+        :root {
+            --bg-color: #1a1a2e;
+            --card-color: #16213e;
+            --primary-color: #0f3460;
+            --accent-color: #e94560;
+            --text-color: #e0e0e0;
+            --header-font: 'Poppins', sans-serif;
+            --body-font: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--header-font);
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: rgba(22, 33, 62, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* About Section */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 0 10%;
+            text-align: center;
+        }
+
+        .about-container h1 {
+            font-size: 3.5rem;
+        }
+
+        .about-container h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-container p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #c0c0c0;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 6rem 10% 4rem;
+        }
+
+        #projects h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        
+        .project-card ul {
+            list-style-position: inside;
+            padding-left: 5px;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tech-stack {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack span {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 0.2rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: auto;
+        }
+
+        .project-link:hover {
+            background-color: #d83c54;
+        }
+
+        /* Contact Footer */
+        #contact {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 4rem 10%;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container h1 {
+                font-size: 2.5rem;
+            }
+            .about-container h2 {
+                font-size: 1.5rem;
+            }
+            nav ul {
+                display: none; /* Simple mobile view - can be improved with JS */
+            }
+        }
+    </style>
+    </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">[Your Name]</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about-container">
+                <h1>Hi, I'm [Your Name] 👋</h1>
+                <h2>AI & Data Science Student</h2>
+                <p>
+                    I'm a passionate developer and problem-solver dedicated to building innovative solutions with AI. My expertise lies in full-stack development, machine learning implementation, and turning complex challenges into simple, elegant applications.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <h3>Secure Document-Aware AI Chatbot</h3>
+                    <p>An intelligent chatbot that provides secure, context-aware answers from both public and restricted organizational documents.</p>
+                    <ul>
+                        <li>Architected the system using Google Gemini for advanced NLP.</li>
+                        <li>Engineered a novel document-aware access control system.</li>
+                        <li>Utilized ChromaDB for high-speed semantic search.</li>
+                        <li>Built a scalable backend with FastAPI to handle concurrent users.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Google Gemini</span>
+                        <span>ChromaDB</span>
+                        <span>FastAPI</span>
+                        <span>Python</span>
+                        <span>LangChain</span>
+                    </div>
+                    <a href="https://github.com/Santhiyav27/TEAM-6" class="project-link" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Powered Inventory Management</h3>
+                    <p>An intelligent system to automate and optimize inventory control using computer vision and predictive analytics.</p>
+                    <ul>
+                        <li>Developed a computer vision module to automatically detect and catalog items.</li>
+                        <li>Deployed a predictive model to forecast seasonal demand.</li>
+                        <li>Significantly reduced manual data entry and improved stock accuracy.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>OpenCV</span>
+                        <span>Flask</span>
+                        <span>SQL</span>
+                    </div>
+                    <a href="#" class="project-link" target="_blank">View on GitHub</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>MIT Tech Talk Tracker</h3>
+                    <p>A full-stack application for tracking and managing tech talks, featuring an innovative offline notification system.</p>
+                     <ul>
+                        <li>Engineered the complete application from UI to server-side logic.</li>
+                        <li>Innovated an offline email notification system to enhance user engagement.</li>
+                        <li>Delivered a fully functional prototype ahead of schedule.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>MIT App Inventor</span>
+                        <span>Firebase</span>
+                        <span>Python</span>
+                    </div>
+                    <a href="#" class="project-link" target="_blank">View on GitHub</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Let's Connect!</h2>
+        <p>I'm open to collaborating on interesting projects. Feel free to reach out.</p>
+        <div class="contact-links">
+            <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">LinkedIn</a>
+            <a href="mailto:YOUR_EMAIL@gmail.com">Email</a>
+        </div>
+        <p class="copyright">&copy; 2025 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
