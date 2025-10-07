@@ -89,6 +89,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column; /* Ensure vertical alignment */
             min-height: 100vh;
             padding: 0 10%;
             text-align: center;
@@ -110,6 +111,27 @@
             font-size: 1.1rem;
             color: #c0c0c0;
         }
+
+        /* MOVED: Styles for social icons now in About section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem; /* Added more space */
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 2.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
 
         /* Projects Section */
         #projects {
@@ -192,36 +214,27 @@
             background-color: #d83c54;
         }
 
-        /* Contact Footer */
-        #contact {
+        /* UPDATED: Footer Styles for Quote */
+        footer {
             background-color: var(--primary-color);
             text-align: center;
-            padding: 4rem 10%;
+            padding: 3rem 10%;
         }
 
-        #contact h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .footer-quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            color: #c0c0c0;
         }
-
-        /* UPDATED: Styles for the icons */
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .contact-links a {
+        
+        .footer-quote span {
+            display: block;
+            font-style: normal;
+            margin-top: 0.5rem;
+            font-weight: 400;
             color: var(--text-color);
-            text-decoration: none;
-            font-size: 2.2rem; /* Increased size for icons */
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .contact-links a:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
         }
 
         .copyright {
@@ -251,8 +264,7 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+                </ul>
         </nav>
     </header>
 
@@ -264,6 +276,12 @@
                 <p>
                     I'm a passionate developer and problem-solver dedicated to building innovative solutions with AI. My expertise lies in full-stack development, machine learning implementation, and turning complex challenges into simple, elegant applications.
                 </p>
+
+                <div class="contact-links">
+                    <a href="https://github.com/poojith3010" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/poojith-m-9a27752b8" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:mpoojith456@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
             </div>
         </section>
 
@@ -328,16 +346,11 @@
         </section>
     </main>
 
-    <footer id="contact">
-        <h2>Let's Connect!</h2>
-        <p>I'm open to collaborating on interesting projects. Feel free to reach out.</p>
-        
-        <div class="contact-links">
-            <a href="https://github.com/poojith3010" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/poojith-m-9a27752b8" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:mpoojith456@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        
+    <footer>
+        <p class="footer-quote">
+            "The best way to predict the future is to invent it."
+            <span>- Alan Kay</span>
+        </p>
         <p class="copyright">&copy; 2025 Poojith M. All rights reserved.</p>
     </footer>
 
