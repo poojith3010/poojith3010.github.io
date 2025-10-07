@@ -53,12 +53,16 @@
             width: 100%;
             z-index: 100;
             border-bottom: 1px solid var(--primary-color);
+            transition: padding 0.3s;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
+            max-width: 1200px; /* Added for better alignment on large screens */
+            margin: 0 auto;
         }
 
         nav .logo {
@@ -84,14 +88,14 @@
             color: var(--accent-color);
         }
 
-        /* About Section */
+        /* About Section (Hero) */
         #about {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column; /* Ensure vertical alignment */
+            flex-direction: column;
             min-height: 100vh;
-            padding: 0 10%;
+            padding: 5rem 10% 3rem; /* Added top padding to offset nav */
             text-align: center;
         }
 
@@ -131,11 +135,9 @@
             transform: scale(1.1);
         }
 
-
         /* Projects Section */
         #projects {
-            /* MODIFIED: Reduced top padding from 6rem to 3rem */
-            padding: 3rem 10% 4rem;
+            padding: 4rem 10% 4rem; /* Adjusted padding for better flow */
         }
 
         #projects h2 {
@@ -146,8 +148,10 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly adjusted min size */
             gap: 2rem;
+            max-width: 1200px; /* Consistent max-width */
+            margin: 0 auto;
         }
 
         .project-card {
@@ -162,7 +166,6 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            /* MODIFIED: Added a glowing shadow effect with the accent color */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 20px rgba(233, 69, 96, 0.4);
         }
 
@@ -215,7 +218,7 @@
             background-color: #d83c54;
         }
 
-        /* Footer Styles for Quote */
+        /* Footer */
         footer {
             background-color: var(--primary-color);
             text-align: center;
@@ -244,16 +247,41 @@
             color: #a0a0a0;
         }
 
-        /* Responsive Design */
+        /* ===== Responsive Design for Mobile ===== */
         @media (max-width: 768px) {
+            header {
+                padding: 0.5rem 5%; /* Adjusted header padding */
+            }
+            
+            nav {
+                flex-direction: column; /* Stack logo and links */
+                gap: 0.5rem;
+            }
+            
             .about-container h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem; /* Scaled down heading */
             }
+
             .about-container h2 {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
-            nav ul {
-                display: none;
+            
+            #projects {
+                 padding: 4rem 5% 4rem; /* Reduced side padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-container h1 {
+                font-size: 2.2rem; /* Further scaling for small phones */
+            }
+
+            .project-card {
+                padding: 1.5rem; /* More compact project cards */
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr; /* Force single column on very small screens */
             }
         }
     </style>
@@ -340,7 +368,7 @@
                         <span>Firebase</span>
                         <span>Python</span>
                     </div>
-                    <a href="https://github.com/poojith3010/mit_tech_talk_tracker.git" class="project-link" target="_blank">View on GitHub</a>
+                    <a href="#" class="project-link" target="_blank">View on GitHub</a>
                 </div>
 
             </div>
