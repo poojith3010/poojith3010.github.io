@@ -7,6 +7,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         /* General Styling */
         :root {
@@ -202,16 +204,24 @@
             margin-bottom: 1rem;
         }
 
+        /* UPDATED: Styles for the icons */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
         .contact-links a {
             color: var(--text-color);
             text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.1rem;
-            transition: color 0.3s;
+            font-size: 2.2rem; /* Increased size for icons */
+            transition: color 0.3s, transform 0.3s;
         }
 
         .contact-links a:hover {
             color: var(--accent-color);
+            transform: scale(1.1);
         }
 
         .copyright {
@@ -233,7 +243,7 @@
             }
         }
     </style>
-    </head>
+</head>
 <body>
     <header>
         <nav>
@@ -321,11 +331,13 @@
     <footer id="contact">
         <h2>Let's Connect!</h2>
         <p>I'm open to collaborating on interesting projects. Feel free to reach out.</p>
+        
         <div class="contact-links">
-            <a href="https://github.com/poojith3010" target="_blank">GitHub</a>            
-            <a href="https://linkedin.com/in/poojith-m-9a27752b8" target="_blank">LinkedIn</a>
-            <a href="mailto:mpoojith456@gmail.com">Email</a>
+            <a href="https://github.com/poojith3010" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/poojith-m-9a27752b8" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:mpoojith456@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
+        
         <p class="copyright">&copy; 2025 Poojith M. All rights reserved.</p>
     </footer>
 
